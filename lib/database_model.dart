@@ -4,26 +4,26 @@
 
 import 'dart:convert';
 
-CustomerDetails todoFromJson(String str) => CustomerDetails.fromJson(json.decode(str));
+CrudModel todoFromJson(String str) => CrudModel.fromJson(json.decode(str));
 
-String todoToJson(CustomerDetails data) => json.encode(data.toJson());
+String todoToJson(CrudModel data) => json.encode(data.toJson());
 
-class CustomerDetails {
+class CrudModel {
   int ?id;
-  String ?name;
+  String? name;
   String ?address;
   String ?email;
   String ?phone;
 
-  CustomerDetails({
-    this.id,
-    this.name,
-    this.address,
-    this.email,
-    this.phone,
+  CrudModel({
+     this.id,
+     this.name,
+     this.address,
+     this.email,
+     this.phone,
   });
 
-  factory CustomerDetails.fromJson(Map<String, dynamic> json) => CustomerDetails(
+  factory CrudModel.fromJson(Map<String, dynamic> json) => CrudModel(
     id: json["id"],
     name: json["name"],
     address: json["address"],
@@ -32,7 +32,7 @@ class CustomerDetails {
   );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
+    // "id": id,
     "name": name,
     "address": address,
     "email": email,
